@@ -33,7 +33,9 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <p class="card-text">${text}</p>
-                        <button class="btn btn-outline-secondary btn-sm copyBtn">Copy</button>
+                        <div class="d-flex justify-content-end mt-2">
+                            <button class="btn btn-outline-secondary btn-sm copyBtn">Copy</button>
+                        </div>
                     </div>
                 </div>
             `);
@@ -42,7 +44,7 @@
 
         $('.copyBtn').click(function () {
             const btn = $(this);
-            const text = btn.siblings('p').text();
+            const text = btn.closest('.card-body').find('p').text();
             navigator.clipboard.writeText(text).then(() => {
                 const originalText = btn.text();
                 btn.text('Copied!');
