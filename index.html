@@ -7,7 +7,7 @@
     <title>Gemini Prompts</title>
 </head>
 <body>
-<!-- Dark Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Gemini Prompts</a>
@@ -20,12 +20,9 @@
 
 <div class="container mt-3" id="promptsContainer"></div>
 
-<!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<!-- Prompts -->
 <script src="prompts/man.js"></script>
 <script src="prompts/woman.js"></script>
-<!-- Main Script -->
 <script>
     function showPrompts(prompts) {
         const container = $('#promptsContainer');
@@ -62,8 +59,8 @@
         });
     }
 
-    $('#manBtn').click(() => showPrompts(manPrompts));
-    $('#womanBtn').click(() => showPrompts(womanPrompts));
+    $('#manBtn').click(() => showPrompts([man_prompt_1, man_prompt_2]));
+    $('#womanBtn').click(() => showPrompts([woman_prompt_1, woman_prompt_2, woman_prompt_3]));
 </script>
 
 </body>
