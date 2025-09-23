@@ -1,7 +1,7 @@
 # 🌟 Gemini Prompts 🌟
 
 Discover a simple yet creative web application built with **HTML** and **CSS** to manage and showcase AI prompts. With
-this project, users can generate images using prompts directly through the website.
+this project, users can generate images using prompts directly through the website
 
 ## 🛠️ Technologies
 
