@@ -7,9 +7,9 @@
     <title>Gemini Prompts</title>
 </head>
 
-<body>
+<body style="padding-top: 70px;">
 <!-- Navbar -->
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Gemini Prompts</a>
         <div class="d-flex" style="gap:10px;">
@@ -19,7 +19,7 @@
     </div>
 </nav>
 
-<div class="container-fluid mt-5" id="promptsContainer"></div>
+<div class="container-fluid mt-3" id="promptsContainer"></div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="prompts/man.js"></script>
@@ -35,8 +35,8 @@
                     <div class="card-body row g-3 align-items-start">
                         <!-- Prompt -->
                         <div class="col-12 col-md-4">
-                            <p class="card-text small">${prompt}</p>
-                            <div class="d-flex justify-content-start mt-2">
+                            <p class="card-text small w-100">${prompt}</p>
+                            <div class="d-flex justify-content-end mt-2 w-100">
                                 <button class="btn btn-outline-secondary btn-sm copyBtn">Copy</button>
                             </div>
                         </div>
@@ -56,11 +56,11 @@
 
         $('.copyBtn').click(function () {
             const btn = $(this);
-            const prompt = btn.closest('.card-body').find('p').text();
-            navigator.clipboard.writeText(prompt).then(() => {
-                const originalPrompt = btn.text();
+            const promptText = btn.closest('.card-body').find('p').text();
+            navigator.clipboard.writeText(promptText).then(() => {
+                const originalText = btn.text();
                 btn.text('Copied!');
-                setTimeout(() => btn.text(originalPrompt), 1500);
+                setTimeout(() => btn.text(originalText), 1500);
             });
         });
     }
