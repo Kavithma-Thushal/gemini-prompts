@@ -19,7 +19,7 @@
     </div>
 </nav>
 
-<div class="container mt-3" id="promptsContainer"></div>
+<div class="container-fluid mt-5" id="promptsContainer"></div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="prompts/man.js"></script>
@@ -29,13 +29,13 @@
         const container = $('#promptsContainer');
         container.empty();
         prompts.forEach(item => {
-            const {text, images} = item;
+            const {prompt, images} = item;
             const card = $(`
-                <div class="card mb-3">
+                <div class="card mb-5">
                     <div class="card-body row g-3 align-items-start">
                         <!-- Prompt -->
                         <div class="col-12 col-md-4">
-                            <p class="card-text small">${text}</p>
+                            <p class="card-text small">${prompt}</p>
                             <div class="d-flex justify-content-start mt-2">
                                 <button class="btn btn-outline-secondary btn-sm copyBtn">Copy</button>
                             </div>
@@ -56,11 +56,11 @@
 
         $('.copyBtn').click(function () {
             const btn = $(this);
-            const text = btn.closest('.card-body').find('p').text();
-            navigator.clipboard.writeText(text).then(() => {
-                const originalText = btn.text();
+            const prompt = btn.closest('.card-body').find('p').text();
+            navigator.clipboard.writeText(prompt).then(() => {
+                const originalPrompt = btn.text();
                 btn.text('Copied!');
-                setTimeout(() => btn.text(originalText), 1500);
+                setTimeout(() => btn.text(originalPrompt), 1500);
             });
         });
     }
