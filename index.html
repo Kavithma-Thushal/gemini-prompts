@@ -7,7 +7,7 @@
     <title>Gemini Prompts</title>
 </head>
 
-<body style="padding-top: 70px;">
+<body>
 <!-- Navbar -->
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
@@ -19,14 +19,24 @@
     </div>
 </nav>
 
-<div class="container-fluid mt-3" id="promptsContainer"></div>
+<!-- Home content -->
+<div class="container-fluid mt-5 pt-5" id="home">
+    <div class="text-center my-5">
+        <h1 class="display-4">This is Gemini Prompts!</h1>
+    </div>
+</div>
+
+<!-- Prompts container -->
+<div class="container-fluid mt-5 pt-5" id="prompts"></div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="prompts/man.js"></script>
 <script src="prompts/woman.js"></script>
 <script>
     function showPrompts(prompts) {
-        const container = $('#promptsContainer');
+        $('#home').hide();
+
+        const container = $('#prompts');
         container.empty();
         prompts.forEach(item => {
             const {prompt, images} = item;
