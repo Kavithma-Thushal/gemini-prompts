@@ -11,7 +11,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Gemini Prompts</a>
+        <a class="navbar-brand" href="">Gemini Prompts</a>
         <div class="d-flex gap-2">
             <button class="btn btn-primary" id="manBtn">Man</button>
             <button class="btn btn-primary" id="womanBtn">Woman</button>
@@ -23,16 +23,12 @@
 <div class="container-fluid mt-5 pt-5" id="home">
     <div class="text-center">
         <h1 class="display-3 fw-bold mb-4 mt-5 text-decoration-underline">
-            These are so many Gemini Prompts!
+            Gemini Prompts!
         </h1>
-        <h2 class="fw-bold mt-5">
-            ඔයාට ඕන prompt එකක් copy කරගෙන
-            <a href="https://gemini.google.com" target="_blank">Gemini AI</a>
+        <h2 class="fw-bold mt-5">ඔයාට ඕන prompt එකක් copy කරගෙන
+            <a href="https://gemini.google.com" target="_blank" class="text-decoration-none">Gemini AI</a>
             ඒකෙන් තමන්ගේ පින්තූරය හදාගන්න
         </h2>
-        <a href="#prompts" class="btn btn-outline-primary btn-lg mt-5">
-            Get Started
-        </a>
     </div>
 </div>
 
@@ -53,6 +49,7 @@
             const card = $(`
         <div class="card mb-5 shadow-sm">
           <div class="card-body">
+
             <!-- Prompt -->
             <p class="card-text">${prompt}</p>
             <div class="d-flex justify-content-end mb-3">
@@ -87,5 +84,6 @@
     $('#manBtn').click(() => showPrompts(man_prompts));
     $('#womanBtn').click(() => showPrompts(woman_prompts));
 </script>
+
 </body>
 </html>
