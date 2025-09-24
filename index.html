@@ -44,6 +44,16 @@
     </div>
 </footer>
 
+<!-- Scroll buttons -->
+<div class="position-fixed bottom-0 end-0 m-3 d-flex flex-column align-items-center" style="gap:10px;">
+    <button id="scrollUpBtn" class="btn btn-dark text-white" style="width:45px; height:45px; border: 2px solid white;">
+        ↑
+    </button>
+    <button id="scrollDownBtn" class="btn btn-dark text-white"
+            style="width:45px; height:45px; border: 2px solid white;">↓
+    </button>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="prompts/man.js"></script>
 <script src="prompts/woman.js"></script>
@@ -106,6 +116,10 @@
         const allPrompts = [...woman_prompts, ...man_prompts];
         showPrompts(allPrompts, false);
     });
+
+    // Scroll buttons functionality
+    $('#scrollUpBtn').click(() => window.scrollTo({top: 0, behavior: 'smooth'}));
+    $('#scrollDownBtn').click(() => window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'}));
 </script>
 
 </body>
