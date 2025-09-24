@@ -39,8 +39,8 @@
 <script src="prompts/man.js"></script>
 <script src="prompts/woman.js"></script>
 <script>
-    function showPrompts(prompts) {
-        $('#home').hide();
+    function showPrompts(prompts, hideHome = true) {
+        if (hideHome) $('#home').hide();
         const container = $('#prompts');
         container.empty();
 
@@ -52,8 +52,9 @@
 
             <!-- Prompt -->
             <p class="card-text">${prompt}</p>
-            <div class="d-flex justify-content-end mb-3">
+            <div class="d-flex justify-content-end mb-3 gap-2">
               <button class="btn btn-outline-secondary btn-sm copyBtn">Copy</button>
+              <button class="btn btn-primary btn-sm generateBtn">Generate Image</button>
             </div>
 
             <!-- Images -->
@@ -70,6 +71,7 @@
             container.append(card);
         });
 
+        // Copy button
         $('.copyBtn').click(function () {
             const btn = $(this);
             const promptText = btn.closest('.card-body').find('p').text();
@@ -79,10 +81,22 @@
                 setTimeout(() => btn.text(originalText), 1500);
             });
         });
+
+        // Generate Image button
+        $('.generateBtn').click(function () {
+            window.open('https://gemini.google.com', '_blank');
+        });
     }
 
+    // Button clicks in navbar
     $('#manBtn').click(() => showPrompts(man_prompts));
     $('#womanBtn').click(() => showPrompts(woman_prompts));
+
+    // Default: show woman + man prompts
+    $(document).ready(() => {
+        const allPrompts = [...woman_prompts, ...man_prompts];
+        showPrompts(allPrompts, false);
+    });
 </script>
 
 </body>
