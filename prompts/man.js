@@ -39,4 +39,12 @@ const man_prompts = [
             "samples/man_prompt_5.3.png",
         ]
     },
+    {
+        prompt: "A hyper-realistic cinematic editorial portrait of the uploaded person (preserve face 100%). He stands tall in a dark moody studio, surrounded by soft drifting smoke under a dramatic spotlight. Outfit: Oversized white luxury suit with wide-leg trousers, paired with a slightly unbuttoned white silk shirt. The body is slim, but the suit remains oversized for a bold fashion-forward look. Both hands tucked casually in pockets, shoulders relaxed, confident expression, head tilted slightly upward. His face has a subtle glow, and he wears a thin gold necklace. The studio room background has a dark blue tone to match the suit color, enhancing the atmosphere.",
+        images: [
+            "samples/man_prompt_6.1.png",
+            "samples/man_prompt_6.2.png",
+            "samples/man_prompt_6.3.png",
+        ]
+    },
 ];
